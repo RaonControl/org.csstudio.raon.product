@@ -2,7 +2,7 @@
 <feature
       id="org.csstudio.raon.product.configuration.feature"
       label="Product configuration feature"
-      version="0.0.1.qualifier">
+      version="4.4.2">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -15,5 +15,21 @@
    <license url="http://www.example.com/license">
       [Enter License Description here.]
    </license>
+
+
+   <plugin
+         id="org.csstudio.raon.product"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+
+   <plugin
+         id="org.eclipse.draw2d"
+         download-size="0"
+         install-size="0"
+         version="3.9.101.201408150207"
+         unpack="false"/>
 
 </feature>

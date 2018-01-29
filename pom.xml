@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.csstudio</groupId>
     <artifactId>raon-product</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>4.4.2</version>
     <packaging>pom</packaging>
     <name>RAON CS-Studio Product</name>
     <description>CS-Studio RAON product</description>
@@ -11,7 +11,9 @@
     <!-- CHILD MODULES -->
     <modules>
         <module>repository</module>
-        <module>features</module>
+        <module>features</module> 
+        <module>plugins</module>
+        
     </modules>
 
     <!-- USE MAVEN 3.0 -->
@@ -22,9 +24,13 @@
     <!-- PROPERTIES -->
     <properties>
         <!-- VERSIONS -->
-        <tycho.version>0.22.0</tycho.version>
-        <tycho-extras.version>0.22.0</tycho-extras.version>
+        <tycho.version>0.23.1</tycho.version>
+        <tycho-extras.version>0.23.1</tycho-extras.version>
+        <cs-studio.version>4.4</cs-studio.version>
+	<raon.version>4.4.2</raon.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
+        <baselineMode>fail</baselineMode>
     </properties>
 
     <!-- PLUGIN REPOSITORIES -->
@@ -87,21 +93,25 @@
                     </dependency-resolution>
 
                     <environments>
+<!--
                         <environment>
                             <os>linux</os>
                             <ws>gtk</ws>
                             <arch>x86</arch>
                         </environment>
+-->
                         <environment>
                             <os>linux</os>
                             <ws>gtk</ws>
                             <arch>x86_64</arch>
                         </environment>
+<!--
                         <environment>
                             <os>win32</os>
                             <ws>win32</ws>
                             <arch>x86</arch>
                         </environment>
+-->
                         <environment>
                             <os>win32</os>
                             <ws>win32</ws>
@@ -110,7 +120,7 @@
                         <environment>
                             <os>macosx</os>
                             <ws>cocoa</ws>
-                            <arch>x86</arch>
+                            <arch>x86_64</arch>
                         </environment>
                     </environments>
                 </configuration>
@@ -145,13 +155,13 @@
                 </property>
             </activation>
             <properties>
-                <eclipse-site>http://download.eclipse.org/releases/luna</eclipse-site>
-                <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.4</eclipse-update-site>
-                <rap-site>http://download.eclipse.org/rt/rap/2.3</rap-site>
-                <rap-incubator-site>http://download.eclipse.org/rt/rap/incubator/nightly/gef</rap-incubator-site>
-                <platform-version>[4.3,4.4)</platform-version>
-                <swtbot-site>http://download.eclipse.org/technology/swtbot/luna/dev-build/update-site</swtbot-site>
-            </properties>
+                <eclipse-site>http://download.eclipse.org/releases/mars</eclipse-site>
+                <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.5</eclipse-update-site>
+                <rap-site>http://download.eclipse.org/rt/rap/3.0</rap-site>
+                <rap-incubator-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150122-1538/</rap-incubator-site>
+                <platform-version>[4.4,4.5)</platform-version>
+              <swtbot-site>http://download.eclipse.org/technology/swtbot/mars/dev-build/update-site</swtbot-site>
+           </properties>
         </profile>
         <profile>
             <id>csstudio-composite-repo-enable</id>
@@ -189,7 +199,12 @@
             <repositories>
                 <repository>
                     <id>csstudio-updates</id>
-                    <url>http://download.controlsystemstudio.org/updates/4.1</url>
+                    <url>http://download.controlsystemstudio.org/updates/${cs-studio.version}</url>
+                    <layout>p2</layout>
+                </repository>
+            <repository>
+                    <id>csstudio-issue-1818</id>
+                    <url>http://download.controlsystemstudio.org/issue/1818</url>
                     <layout>p2</layout>
                 </repository>
             </repositories>
@@ -220,7 +235,7 @@
         </repository>
         <repository>
             <id>orbit</id>
-            <url>http://download.eclipse.org/tools/orbit/downloads/drops/R20140114142710/repository</url>
+            <url>http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository</url>
             <layout>p2</layout>
         </repository>
         <repository>

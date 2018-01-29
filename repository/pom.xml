@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.csstudio</groupId>
         <artifactId>raon-product</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>4.4.2</version>
     </parent>
     <artifactId>repository</artifactId>
     <packaging>eclipse-repository</packaging>
@@ -41,6 +41,17 @@
                         <goals>
                             <goal>materialize-products</goal>
                         </goals>
+                        <configuration>
+                          <products>
+                            <product>
+                              <id>cs-studio-raon</id>
+                              <rootFolder>cs-studio</rootFolder>
+                              <rootFolders>
+                              <macosx>Cs-studio.app</macosx>
+                            </rootFolders>
+                          </product>
+                        </products>
+                      </configuration>
                     </execution>
                     <execution>
                         <id>archive-products</id>

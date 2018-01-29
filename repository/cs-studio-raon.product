@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Cs-studio-raon" uid="cs-studio-raon" id="org.csstudio.product.product" application="org.csstudio.product.application" version="4.1.0" useFeatures="true" includeLaunchers="true">
+<product name="RAON CS-Studio" uid="cs-studio-raon" id="org.csstudio.raon.product.product" application="org.csstudio.raon.product.application" version="4.4.2" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/org.csstudio.product/icons/cs-studio-about.png"/>
+      <image path="/org.csstudio.raon.product/icons/about.png"/>
       <text>
          %aboutText
       </text>
@@ -34,17 +34,19 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/org.csstudio.product/icons/css16.png" i32="/org.csstudio.product/icons/css32.png" i48="/org.csstudio.product/icons/css48.png" i64="/org.csstudio.product/icons/css64.png" i128="/org.csstudio.product/icons/css128.png"/>
+   <windowImages i16="/org.csstudio.raon.product/icons/css16.png" i32="/org.csstudio.raon.product/icons/css32.png" i48="/org.csstudio.raon.product/icons/css48.png" i64="/org.csstudio.raon.product/icons/css64.png" i128="/org.csstudio.raon.product/icons/css128.png"/>
 
    <splash
-      location="org.csstudio.product"
+      location="org.csstudio.raon.product"
       startupProgressRect="5,222,470,15"
       startupMessageRect="7,200,466,20"
       startupForegroundColor="FFFFFF" />
    <launcher name="cs-studio">
+      <linux icon="/icons/css48.xpm"/>
+      <macosx icon="/icons/css.icns"/>
       <solaris/>
       <win useIco="true">
-         <ico path="/template-product/repository/icons/css.ico"/>
+         <ico path="/icons/css.ico"/>
          <bmp/>
       </win>
    </launcher>
@@ -65,44 +67,50 @@
    </plugins>
 
    <features>
-      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.e4.rcp"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
       <feature id="org.eclipse.equinox.p2.rcp.feature"/>
       <feature id="org.eclipse.equinox.p2.extras.feature"/>
+      <feature id="org.eclipse.fx.target.rcp.feature"/>
       <feature id="org.csstudio.product.feature"/>
-      <feature id="org.csstudio.pvmanager.feature"/>
-      <feature id="org.csstudio.pvmanager.ca.feature"/>
-      <feature id="org.csstudio.pvmanager.exec.feature"/>
-      <feature id="org.csstudio.pvmanager.extra.feature"/>
-      <feature id="org.csstudio.pvmanager.jdbc.feature"/>
-      <feature id="org.csstudio.pvmanager.pva.feature"/>
+      <feature id="org.csstudio.core.ui.feature"/>
+      <feature id="org.csstudio.core.diirt.feature"/>
+      <feature id="org.csstudio.core.base.feature"/>
+      <feature id="org.csstudio.core.platform.feature"/>
+      <feature id="org.csstudio.core.utility.feature" version="4.1.0.201703231623"/>
       <feature id="org.csstudio.utilities.feature"/>
       <feature id="org.csstudio.pvmanager.autocomplete.feature"/>
-      <feature id="org.csstudio.product.configuration.feature"/>
       <feature id="org.csstudio.olog.feature"/>
       <feature id="org.csstudio.alarm.beast.ui.feature"/>
-      <feature id="org.csstudio.email.feature"/>
       <feature id="org.csstudio.trends.databrowser2.feature"/>
       <feature id="org.csstudio.logbook.viewer.feature"/>
-      <feature id="org.csstudio.logbook.shift.feature"/>
       <feature id="org.csstudio.trends.databrowser2.opiwidget.feature"/>
-      <feature id="org.eclipse.fx.target.feature"/>
       <feature id="org.csstudio.archive.reader.appliance.feature"/>
-      <feature id="mercurialeclipse"/>
-      <feature id="org.csstudio.core.utility.feature"/>
-      <feature id="org.csstudio.core.base.feature"/>
-      <feature id="org.csstudio.thirdparty.all.feature"/>
       <feature id="org.csstudio.applications.channel.feature"/>
       <feature id="org.csstudio.applications.channelfinder.feature"/>
+      <feature id="org.csstudio.applications.logbook.feature"/>
       <feature id="org.csstudio.applications.opibuilder.feature"/>
-      <feature id="org.csstudio.applications.shift.feature"/>
-      <feature id="org.csstudio.core.platform.feature"/>
-      <feature id="org.csstudio.core.ui.feature"/>
       <feature id="org.csstudio.applications.utility.feature"/>
       <feature id="org.csstudio.display.pvtable.feature"/>
       <feature id="org.csstudio.applications.pvmanager.diag.feature"/>
+      <feature id="org.csstudio.graphene.feature"/>
+      <feature id="org.csstudio.graphene.opiwidgets.feature"/>
+      <feature id="org.csstudio.pretune.feature"/>
+      <feature id="org.eclipse.egit"/>
+      <feature id="org.eclipse.mylyn.github.feature"/>
+      <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
       <feature id="org.csstudio.raon.product.configuration.feature"/>
+
+<!--      <feature id="org.eclipse.ecf.filetransfer.httpclient4.feature"/> -->
+<!--      <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature"/> -->
+<!--      <feature id="org.eclipse.emf.common"/> -->
+<!--      <feature id="org.eclipse.ecf.core.ssl.feature"/> -->
+<!--      <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/> -->
+<!--      <feature id="org.eclipse.emf.ecore"/> -->
+<!--      <feature id="org.eclipse.ecf.core.feature"/> -->
+<!--      <feature id="org.eclipse.ecf.filetransfer.feature"/> -->
+<!--      <feature id="org.csstudio.core.utility.feature.source" version="4.1.0.201704241358"/> -->
    </features>
 
    <configurations>
